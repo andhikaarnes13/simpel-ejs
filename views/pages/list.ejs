@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header'); %>
+
+<body class="text-center">
+  <%- include('../partials/menu') %>
+
+  <section name="jumbotron">
+    <div class="jumbotron text-center">
+      <!-- <h1>Form Ninja</h1>
+      <p>Build With EJS</p> -->
+    </div>
+  </section>
+
+  <h1>Person List</h1>
+
+ <% for( let i = 0; i < person.length; i++){ %>
+  <li>
+  <input type="checkbox" name="check" value="<%= person[i] %>" /> 
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%=person[i].name %></li>
+      <li class="list-group-item"><%= person[i].email %></li>
+      <li class="list-group-item"><%= person[i].class %></li>
+      <li class="list-group-item"><%= person[i].school %></li>
+      <li class="list-group-item"><%= person[i].phone %></li>
+      
+    </ul>
+  </div>
+   </li>
+  <% } %>
+
+  <%- include('../partials/footer') %>
+  <%- include('../partials/script') %>
+</body>
+
+</html>
